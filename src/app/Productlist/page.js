@@ -8,7 +8,7 @@ import leftarrow from "../../asserts/arrowleft.png";
 import downarrow from "../../asserts/arrowdown.png";
 import heart from "../../asserts/Vector.png";
 import Correct from "../../asserts/Correct.png";
-// import Sidebar from "../../Sidebar";
+import Sidebar from "../Siderbar/Page";
 import styles from "../styles/Product.module.css";
 const Product = () => {
   //hooks or state
@@ -252,46 +252,59 @@ const Product = () => {
                 </div>
               </div>
               {/* {tooglenavbar ? <Sidebar className="sidebar" /> : ""} */}
-              {/* <Sidebar className="sidebar" /> */}
-              <div className={styles.productgrid}>
-                {products.map((product) => (
-                  <div
-                    className={styles.productitem}
-                    key={product.id}
-                    onMouseEnter={() => setHoveredProductId(product.id)}
-                    onMouseLeave={() => setHoveredProductId(null)}
-                  >
-                    <img
-                      src={product.image}
-                      alt="productsImage"
-                      className={`product-image product-image-${product.id}`}
-                    />
-                    <h4
-                      className={styles.producttitle}
-                      dangerouslySetInnerHTML={{
-                        __html: truncateContent(product.title.slice(0, 20)),
-                      }}
-                    ></h4>
-                    <span className={styles.productcategory}>
-                      ${product.category}{" "}
-                      <Image
-                        src={heart}
-                        alt="favroite"
-                        style={{
-                          cursor: "pointer",
-                          width: "15px",
-                          height: "15px",
-
-                          objectFit: "fill",
-                        }}
-                        className={styles.favoriteIcon}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  style={{ display: tooglenavbar ? "none" : "block" }}
+                  className={styles.sidebar}
+                >
+                  <Sidebar />
+                </div>
+                <div className={styles.productgrid}>
+                  {products.map((product) => (
+                    <div
+                      className={styles.productitem}
+                      key={product.id}
+                      onMouseEnter={() => setHoveredProductId(product.id)}
+                      onMouseLeave={() => setHoveredProductId(null)}
+                    >
+                      <img
+                        src={product.image}
+                        alt="productsImage"
+                        className={`product-image product-image-${product.id}`}
                       />
-                    </span>
-                    {hoveredProductId === product.id && (
-                      <h4 className="outofstockmessage">Out of stock</h4>
-                    )}
-                  </div>
-                ))}
+                      <h4
+                        className={styles.producttitle}
+                        dangerouslySetInnerHTML={{
+                          __html: truncateContent(product.title.slice(0, 20)),
+                        }}
+                      ></h4>
+                      <span className={styles.productcategory}>
+                        ${product.category}{" "}
+                        <Image
+                          src={heart}
+                          alt="favroite"
+                          style={{
+                            cursor: "pointer",
+                            width: "15px",
+                            height: "15px",
+
+                            objectFit: "fill",
+                          }}
+                          className={styles.favoriteIcon}
+                        />
+                      </span>
+                      {hoveredProductId === product.id && (
+                        <h4 className="outofstockmessage">Out of stock</h4>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             </main>
           </div>
