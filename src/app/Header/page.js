@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import styles from "../styles/Header.module.css"; // Importing CSS file from styles folder
 
 // images
+import bar from "../../asserts/bar.png";
 import image1 from "../../asserts/element.png";
 import image2 from "../../asserts/searchnormal.png";
 import image3 from "../../asserts/Vector.png";
@@ -9,8 +12,15 @@ import image4 from "../../asserts/shoppingbag.png";
 import image5 from "../../asserts/profile.png";
 import image6 from "../../asserts/arrowdown.png";
 import image7 from "../../asserts/Logo.png";
+import { useState } from "react";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    console.log("toggleMenu");
+  };
   return (
     <section>
       {/* Mobile */}
@@ -28,9 +38,16 @@ const Header = () => {
           <div className={styles.headerMiddle}>
             <div className={styles.headerLeft}>
               <Image
+                src={bar}
+                alt="image2"
+                style={{ width: "22px", height: "22px" }}
+                onClick={toggleMenu}
+              />
+
+              <Image
                 src={image7}
                 alt="image2"
-                style={{ width: "32px", height: "32px" }}
+                style={{ width: "22px", height: "22px" }}
               />
             </div>
             <div className={styles.headerCenter}>
@@ -55,6 +72,59 @@ const Header = () => {
                 />
               </span>
             </div>
+          </div>
+          <div className={styles.menuContainer}>
+            {isOpen && (
+              <div className={styles.menu}>
+                <ul className={styles.menuList}>
+                  <li
+                    style={{
+                      textAlign: "center",
+                      color: "black",
+                      padding: "20px",
+                    }}
+                  >
+                    SHOP
+                  </li>
+                  <li
+                    style={{
+                      textAlign: "center",
+                      color: "black",
+                      padding: "20px",
+                    }}
+                  >
+                    SKILLS
+                  </li>
+                  <li
+                    style={{
+                      textAlign: "center",
+                      color: "black",
+                      padding: "20px",
+                    }}
+                  >
+                    STORIES
+                  </li>
+                  <li
+                    style={{
+                      textAlign: "center",
+                      color: "black",
+                      padding: "20px",
+                    }}
+                  >
+                    ABOUT
+                  </li>
+                  <li
+                    style={{
+                      textAlign: "center",
+                      color: "black",
+                      padding: "20px",
+                    }}
+                  >
+                    CONTACT US
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </header>
       </div>
@@ -94,7 +164,7 @@ const Header = () => {
                 <Image src={image4} alt="image4" />
                 <Image src={image5} alt="image5" />
               </span>
-              <p>
+              <p style={{ display: "flex", alignItems: "center" }}>
                 ENG <Image src={image6} alt="image6" />
               </p>
             </div>
