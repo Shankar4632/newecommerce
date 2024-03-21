@@ -5,14 +5,16 @@ import Navbar from "./Navbar/page";
 import Demopage from "./Demo.js/page";
 import styles from "../app/styles/Demo.module.css";
 import Products from "./Productlist/page";
+import Slidebar from "./Siderbar/Page";
 import "./styles/globals.css";
 const page = () => {
   return (
     <div>
       <Headerpage />
-      {/* <Navbar /> */}
-
-      <Products />
+      <div>
+        {/* <Slidebar /> */}
+        <Products />
+      </div>
       <Demopage />
       {/* <Footerpage /> */}
     </div>
