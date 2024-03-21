@@ -21,14 +21,25 @@
         position: absolute;
         z-index: 999;
         width: 100%;
+        top: 100%;
+        /* Initially position the menu below the header */
+
         top: 10;
         /* Position it below the header */
         background-color: white;
         /* left: 0; */
         margin: 0 auto;
         /* border-bottom: 1px solid #ccc;    */
-
+        transition: top 0.3s ease;
+        /* Add transition for sliding effect */
     }
+
+    .menuContainer.visible {
+        top: calc(100% - 100px);
+        /* Slide the menu to the top of the header */
+    }
+
+
 
     .menu {
         background-color: white;
@@ -174,7 +185,7 @@
 
     .headerSection {
         background-color: white;
-        height: 220px;
+        height: 180px;
         width: 100%;
         margin: 0 auto;
         border-bottom: 1px solid #E5E5E5;
@@ -231,7 +242,7 @@
     }
 
     .headerCenter h1 {
-        font-size: 36px;
+        font-size: 26px;
         font-weight: 800;
         line-height: 43.57px;
     }
@@ -266,7 +277,7 @@
         display: inline-block;
         margin: 0 20px;
         justify-content: flex-start;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 24px;
         font-weight: 700;
     }

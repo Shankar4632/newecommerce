@@ -8,6 +8,52 @@
     margin: 0 auto;
 }
 
+.loadingcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: aqua;
+    width: 100%;
+}
+
+.contentwrapper {
+    display: flex;
+    gap: 5px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.leftcontent,
+.rightcontent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: black;
+}
+
+.leftcontent .grid,
+.rightcontent .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.leftcontent .space-y-3,
+.rightcontent .space-y-3 {
+    margin-top: 96px;
+}
+
+.border {
+    border: 1px solid #e5e7eb;
+}
+
+/* Adjust other classes and styles as needed */
+
 
 /* Red color for mobile devices */
 @media only screen and (max-width: 599px) {
