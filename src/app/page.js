@@ -9,7 +9,7 @@ import "./styles/globals.css";
 const page = () => {
   return (
     <div>
-      {/* <Headerpage /> */}
+      <Headerpage />
       {/* <Navbar /> */}
 
       <Products />

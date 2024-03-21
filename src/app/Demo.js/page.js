@@ -65,7 +65,7 @@ const page = () => {
       </div>
     );
   };
-  // useClient();
+
   return (
     <div>
       {/* Mobile */}
@@ -219,64 +219,10 @@ const page = () => {
               ]}
             />
             <div style={{ paddingBottom: "10px" }}>
-              <Dropdown
-                title="FOLLOW US"
-                items={["Instagram", "LinkedIn"]} // Assuming you want only icons for Instagram and LinkedIn
-              />
+              <Dropdown title="FOLLOW US" items={["Instagram", "LinkedIn"]} />
             </div>
           </div>
 
-          {/* <div style={{ paddingBottom: "10px" }}>
-            <h4
-              onClick={toggleDropdown}
-              style={{
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                color: "white",
-              }}
-            >
-              FOLLOW US
-              <Image
-                src={downarrow}
-                alt="downarrow"
-                style={{ color: "white", backgroundColor: "white" }}
-              />
-            </h4>
-            {isOpen && (
-              <div
-                style={{
-                  listStyle: "none",
-                  padding: "0px",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <Image
-                    src={instagram}
-                    alt="instagram"
-                    style={{
-                      borderRadius: "50%",
-                      border: "1px solid white",
-                      cursor: "pointer",
-                    }}
-                  />
-                  <Image
-                    src={Linkdin}
-                    alt="Linkdin"
-                    sizes="30"
-                    style={{
-                      borderRadius: "50%",
-                      border: "1px solid white",
-                      marginLeft: "10px",
-                      padding: "5px",
-                      cursor: "pointer",
-                    }}
-                  />
-                </div>
-              </div>
-            )}
-          </div> */}
           <h4 style={{ color: "white" }}>mettä muse ACCEPTS</h4>
 
           <div className={styles.footerpay}>

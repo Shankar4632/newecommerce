@@ -1,107 +1,454 @@
-.headerSection {
-    background-color: white;
-    height: 220px;
+.container {
     width: 100%;
-    margin: 0 auto;
-    border-bottom: 1px solid #E5E5E5;
-    padding: 0px;
-    box-sizing: border-box;
-}
 
-.headerTopMain {
-    width: 100%;
-    background-color: black;
-}
-
-.headerTop {
-    margin: 0 auto;
-    height: 32px;
-    color: #EB4C6B;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.headerLogo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    gap: 10px;
-}
-
-.headerMiddle {
-    width: 90%;
-    display: flex;
+    display: none;
+    /* display: flex; */
     justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+
+    height: auto;
+    background-color: white;
 }
 
-.headerLeft,
-.headerCenter,
-.headerRight {
-    flex: 1;
+
+
+/* Red color for mobile devices */
+@media only screen and (max-width: 599px) {
+    .mobile {
+        display: block;
+    }
+
+    .headerSection {
+        background-color: white;
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .headerTopMain {
+        width: 100%;
+        background-color: black;
+    }
+
+    .headerTop {
+        margin: 0 auto;
+        height: 32px;
+        color: #EB4C6B;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .headerLogo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 10px;
+    }
+
+
+
+    .headerMiddle {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .headerLeft,
+    .headerCenter,
+    .headerRight {
+        flex: 1;
+    }
+
+    .headerLeft {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .headerCenter {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .headerCenter h1 {
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 43.57px;
+    }
+
+    .headerRight {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .headerIcons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .headerBottom {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 10px;
+    }
+
+    .headerBottom ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .headerBottom li {
+        display: inline-block;
+        margin: 0 20px;
+        justify-content: flex-start;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+
+    .headerBottom li:last-child {
+        margin-right: 0;
+    }
 }
 
-.headerLeft {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+/* Yellow color for tablets */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .tablet {
+        display: block;
+    }
+
+    .headerSection {
+        background-color: white;
+        height: 220px;
+        width: 100%;
+        margin: 0 auto;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .headerTopMain {
+        width: 100%;
+        background-color: black;
+    }
+
+    .headerTop {
+        margin: 0 auto;
+        height: 32px;
+        color: #EB4C6B;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .headerLogo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 10px;
+    }
+
+    .headerMiddle {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .headerLeft,
+    .headerCenter,
+    .headerRight {
+        flex: 1;
+    }
+
+    .headerLeft {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .headerCenter {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .headerCenter h1 {
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 43.57px;
+    }
+
+    .headerRight {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .headerIcons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .headerBottom {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 10px;
+    }
+
+    .headerBottom ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .headerBottom li {
+        display: inline-block;
+        margin: 0 20px;
+        justify-content: flex-start;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+
+    .headerBottom li:last-child {
+        margin-right: 0;
+    }
 }
 
-.headerCenter {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+/* Blue color for desktops */
+@media only screen and (min-width: 1025px) and (max-width: 1279px) {
+    .desktop {
+        display: block;
+    }
+
+    .headerSection {
+        background-color: white;
+        height: 220px;
+        width: 100%;
+        margin: 0 auto;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .headerTopMain {
+        width: 100%;
+        background-color: black;
+    }
+
+    .headerTop {
+        margin: 0 auto;
+        height: 32px;
+        color: #EB4C6B;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .headerLogo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 10px;
+    }
+
+    .headerMiddle {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .headerLeft,
+    .headerCenter,
+    .headerRight {
+        flex: 1;
+    }
+
+    .headerLeft {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .headerCenter {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .headerCenter h1 {
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 43.57px;
+    }
+
+    .headerRight {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .headerIcons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .headerBottom {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 10px;
+    }
+
+    .headerBottom ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .headerBottom li {
+        display: inline-block;
+        margin: 0 20px;
+        justify-content: flex-start;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+
+    .headerBottom li:last-child {
+        margin-right: 0;
+    }
 }
 
-.headerCenter h1 {
-    font-size: 36px;
-    font-weight: 800;
-    line-height: 43.57px;
+/* Pink color for laptops */
+@media only screen and (min-width: 1280px) {
+    .laptop {
+        display: block;
+    }
+
+    .headerSection {
+        background-color: white;
+        height: 220px;
+        width: 100%;
+        margin: 0 auto;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .headerTopMain {
+        width: 100%;
+        background-color: black;
+    }
+
+    .headerTop {
+        margin: 0 auto;
+        height: 32px;
+        color: #EB4C6B;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .headerLogo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 10px;
+    }
+
+    .headerMiddle {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .headerLeft,
+    .headerCenter,
+    .headerRight {
+        flex: 1;
+    }
+
+    .headerLeft {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .headerCenter {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .headerCenter h1 {
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 43.57px;
+    }
+
+    .headerRight {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .headerIcons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .headerBottom {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 10px;
+    }
+
+    .headerBottom ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .headerBottom li {
+        display: inline-block;
+        margin: 0 20px;
+        justify-content: flex-start;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+
+    .headerBottom li:last-child {
+        margin-right: 0;
+    }
 }
-
-.headerRight {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 15px;
-}
-
-.headerIcons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 15px;
-}
-
-.headerBottom {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 10px;
-}
-
-.headerBottom ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.headerBottom li {
-    display: inline-block;
-    margin: 0 20px;
-    justify-content: flex-start;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 700;
-}
-
-.headerBottom li:last-child {
-    margin-right: 0;
-}
-
-/* Responsive section */
-@media (min-width: 768px) {}
-
-@media (min-width: 576px) {}
