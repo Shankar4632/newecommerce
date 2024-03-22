@@ -8,7 +8,7 @@ import Navbar from "./Navbar/page";
 import Demopage from "./Demo.js/page";
 
 import Products from "./Productlist/page";
-import Slidebar from "./Siderbar/Page";
+import Slidebar from "./Siderbar/page";
 import "./styles/globals.css";
 
 const page = () => {
