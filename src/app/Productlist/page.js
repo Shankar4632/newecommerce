@@ -8,7 +8,7 @@ import leftarrow from "../../asserts/arrowleft.png";
 import downarrow from "../../asserts/arrowdown.png";
 import heart from "../../asserts/Vector.png";
 import Correct from "../../asserts/Correct.png";
-import Sidebar from "../Siderbar/Page";
+
 import styles from "../styles/Product.module.css";
 const Product = () => {
   //hooks or state
@@ -17,7 +17,7 @@ const Product = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [hoveredProductId, setHoveredProductId] = useState(null);
   const [tooglenavbar, setTogglenavbar] = useState("false");
-  const { IsLoading, setIsLoading } = useState(true);
+  // const { IsLoading, setIsLoading } = useState(true);
 
   //function calling
   const options = [
@@ -40,11 +40,11 @@ const Product = () => {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
-        setIsLoading(false);
+        // setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-        setIsLoading(false);
+        // setIsLoading(false);
       });
   }, []);
 
@@ -67,204 +67,190 @@ const Product = () => {
   //return statement
   return (
     <section style={{ backgroundColor: "white", width: "90%" }}>
-      {IsLoading ? (
-        <div className={styles.loadingcontainer}>
-          <div className={styles.contentwrapper}>
-            <div className={styles.leftcontent}>
-              <p style={{ color: "red" }}>Loading...</p>
-            </div>
-            <div className={styles.rightcontent}>
-              <p style={{ color: "red" }}>Loading...</p>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div>
-          {/* Desktop */}
-          <div className={`${styles.productcontainer} ${styles.desktop}`}>
-            <main>
-              <div className={styles.productgrid}>
-                {products.map((product) => (
-                  <div
-                    className={styles.productitem}
-                    key={product.id}
-                    onMouseEnter={() => setHoveredProductId(product.id)}
-                    onMouseLeave={() => setHoveredProductId(null)}
-                  >
-                    <Image
-                      src={product.image}
-                      alt="productsImage"
-                      width={200}
-                      height={200}
-                      className={`product-image product-image-${product.id}`}
-                    />
-                    <h4
-                      className={styles.producttitle}
-                      dangerouslySetInnerHTML={{
-                        __html: truncateContent(product.title.slice(0, 20)),
-                      }}
-                    ></h4>
-                    <span className={styles.productcategory}>
-                      ${product.category}
-                    </span>
-                    {hoveredProductId === product.id && (
-                      <h4 className="outofstockmessage">Out of stock</h4>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </main>
-          </div>
-          {/* Laptop */}
-          <div className={`${styles.productcontainer} ${styles.laptop}`}>
-            <main className={styles.productmain}>
-              {/* {tooglenavbar ? <Sidebar className="sidebar" /> : ""} */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "100%",
-                }}
-              >
-                <div className={styles.productgrid}>
-                  {products.map((product) => (
-                    <div
-                      className={styles.productitem}
-                      key={product.id}
-                      onMouseEnter={() => setHoveredProductId(product.id)}
-                      onMouseLeave={() => setHoveredProductId(null)}
-                    >
-                      <img
-                        src={product.image}
-                        alt="productsImage"
-                        className={`product-image product-image-${product.id}`}
-                      />
-                      <h4
-                        className={styles.producttitle}
-                        dangerouslySetInnerHTML={{
-                          __html: truncateContent(product.title.slice(0, 20)),
-                        }}
-                      ></h4>
-                      <span className={styles.productcategory}>
-                        ${product.category}{" "}
-                        <Image
-                          src={heart}
-                          alt="favroite"
-                          style={{
-                            cursor: "pointer",
-                            width: "15px",
-                            height: "15px",
-
-                            objectFit: "fill",
-                          }}
-                          className={styles.favoriteIcon}
-                        />
-                      </span>
-                      {hoveredProductId === product.id && (
-                        <h4 className="outofstockmessage">Out of stock</h4>
-                      )}
-                    </div>
-                  ))}
+      <div>
+        {/* Desktop */}
+        <div className={`${styles.productcontainer} ${styles.desktop}`}>
+          <main>
+            <div className={styles.productgrid}>
+              {products.map((product) => (
+                <div
+                  className={styles.productitem}
+                  key={product.id}
+                  onMouseEnter={() => setHoveredProductId(product.id)}
+                  onMouseLeave={() => setHoveredProductId(null)}
+                >
+                  <Image
+                    src={product.image}
+                    alt="productsImage"
+                    width={200}
+                    height={200}
+                    className={`product-image product-image-${product.id}`}
+                  />
+                  <h4
+                    className={styles.producttitle}
+                    dangerouslySetInnerHTML={{
+                      __html: truncateContent(product.title.slice(0, 20)),
+                    }}
+                  ></h4>
+                  <span className={styles.productcategory}>
+                    ${product.category}
+                  </span>
+                  {hoveredProductId === product.id && (
+                    <h4 className="outofstockmessage">Out of stock</h4>
+                  )}
                 </div>
-              </div>
-            </main>
-          </div>
-          {/* Tablet */}
-          <div className={`${styles.productcontainer} ${styles.tablet}`}>
-            <main className={styles.productmain}>
-              {/* {tooglenavbar ? <Sidebar className="sidebar" /> : ""} */}
-              {/* <Sidebar className="sidebar" /> */}
-              <div className={styles.productgrid}>
-                {products.map((product) => (
-                  <div
-                    className={styles.productitem}
-                    key={product.id}
-                    onMouseEnter={() => setHoveredProductId(product.id)}
-                    onMouseLeave={() => setHoveredProductId(null)}
-                  >
-                    <img
-                      src={product.image}
-                      alt="productsImage"
-                      className={`product-image product-image-${product.id}`}
-                    />
-                    <h4
-                      className={styles.producttitle}
-                      dangerouslySetInnerHTML={{
-                        __html: truncateContent(product.title.slice(0, 20)),
-                      }}
-                    ></h4>
-                    <span className={styles.productcategory}>
-                      ${product.category}{" "}
-                      <Image
-                        src={heart}
-                        alt="favroite"
-                        style={{
-                          cursor: "pointer",
-                          width: "15px",
-                          height: "15px",
-
-                          objectFit: "fill",
-                        }}
-                        className={styles.favoriteIcon}
-                      />
-                    </span>
-                    {hoveredProductId === product.id && (
-                      <h4 className="outofstockmessage">Out of stock</h4>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </main>
-          </div>
-          {/* Mobile */}
-          <div className={`${styles.productcontainer} ${styles.mobile}`}>
-            <main className={styles.productmain}>
-              <div className={styles.productgrid}>
-                {products.map((product) => (
-                  <div
-                    className={styles.productitem}
-                    key={product.id}
-                    onMouseEnter={() => setHoveredProductId(product.id)}
-                    onMouseLeave={() => setHoveredProductId(null)}
-                  >
-                    <img
-                      src={product.image}
-                      alt="productsImage"
-                      className={`product-image product-image-${product.id}`}
-                    />
-                    <h4
-                      className={styles.producttitle}
-                      dangerouslySetInnerHTML={{
-                        __html: truncateContent(product.title.slice(0, 20)),
-                      }}
-                    ></h4>
-                    <span className={styles.productcategory}>
-                      ${product.category}{" "}
-                      <Image
-                        src={heart}
-                        alt="favroite"
-                        style={{
-                          cursor: "pointer",
-                          width: "15px",
-                          height: "15px",
-
-                          objectFit: "fill",
-                        }}
-                        className={styles.favoriteIcon}
-                      />
-                    </span>
-                    {hoveredProductId === product.id && (
-                      <h4 className="outofstockmessage">Out of stock</h4>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </main>
-          </div>
+              ))}
+            </div>
+          </main>
         </div>
-      )}
-      ;
+        {/* Laptop */}
+        <div className={`${styles.productcontainer} ${styles.laptop}`}>
+          <main className={styles.productmain}>
+            {/* {tooglenavbar ? <Sidebar className="sidebar" /> : ""} */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+              }}
+            >
+              <div className={styles.productgrid}>
+                {products.map((product) => (
+                  <div
+                    className={styles.productitem}
+                    key={product.id}
+                    onMouseEnter={() => setHoveredProductId(product.id)}
+                    onMouseLeave={() => setHoveredProductId(null)}
+                  >
+                    <img
+                      src={product.image}
+                      alt="productsImage"
+                      className={`product-image product-image-${product.id}`}
+                    />
+                    <h4
+                      className={styles.producttitle}
+                      dangerouslySetInnerHTML={{
+                        __html: truncateContent(product.title.slice(0, 20)),
+                      }}
+                    ></h4>
+                    <span className={styles.productcategory}>
+                      ${product.category}{" "}
+                      <Image
+                        src={heart}
+                        alt="favroite"
+                        style={{
+                          cursor: "pointer",
+                          width: "15px",
+                          height: "15px",
+
+                          objectFit: "fill",
+                        }}
+                        className={styles.favoriteIcon}
+                      />
+                    </span>
+                    {hoveredProductId === product.id && (
+                      <h4 className="outofstockmessage">Out of stock</h4>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </main>
+        </div>
+        {/* Tablet */}
+        <div className={`${styles.productcontainer} ${styles.tablet}`}>
+          <main className={styles.productmain}>
+            {/* {tooglenavbar ? <Sidebar className="sidebar" /> : ""} */}
+            {/* <Sidebar className="sidebar" /> */}
+            <div className={styles.productgrid}>
+              {products.map((product) => (
+                <div
+                  className={styles.productitem}
+                  key={product.id}
+                  onMouseEnter={() => setHoveredProductId(product.id)}
+                  onMouseLeave={() => setHoveredProductId(null)}
+                >
+                  <img
+                    src={product.image}
+                    alt="productsImage"
+                    className={`product-image product-image-${product.id}`}
+                  />
+                  <h4
+                    className={styles.producttitle}
+                    dangerouslySetInnerHTML={{
+                      __html: truncateContent(product.title.slice(0, 20)),
+                    }}
+                  ></h4>
+                  <span className={styles.productcategory}>
+                    ${product.category}{" "}
+                    <Image
+                      src={heart}
+                      alt="favroite"
+                      style={{
+                        cursor: "pointer",
+                        width: "15px",
+                        height: "15px",
+
+                        objectFit: "fill",
+                      }}
+                      className={styles.favoriteIcon}
+                    />
+                  </span>
+                  {hoveredProductId === product.id && (
+                    <h4 className="outofstockmessage">Out of stock</h4>
+                  )}
+                </div>
+              ))}
+            </div>
+          </main>
+        </div>
+        {/* Mobile */}
+        <div className={`${styles.productcontainer} ${styles.mobile}`}>
+          <main className={styles.productmain}>
+            <div className={styles.productgrid}>
+              {products.map((product) => (
+                <div
+                  className={styles.productitem}
+                  key={product.id}
+                  onMouseEnter={() => setHoveredProductId(product.id)}
+                  onMouseLeave={() => setHoveredProductId(null)}
+                >
+                  <img
+                    src={product.image}
+                    alt="productsImage"
+                    className={`product-image product-image-${product.id}`}
+                  />
+                  <h4
+                    className={styles.producttitle}
+                    dangerouslySetInnerHTML={{
+                      __html: truncateContent(product.title.slice(0, 20)),
+                    }}
+                  ></h4>
+                  <span className={styles.productcategory}>
+                    ${product.category}{" "}
+                    <Image
+                      src={heart}
+                      alt="favroite"
+                      style={{
+                        cursor: "pointer",
+                        width: "15px",
+                        height: "15px",
+
+                        objectFit: "fill",
+                      }}
+                      className={styles.favoriteIcon}
+                    />
+                  </span>
+                  {hoveredProductId === product.id && (
+                    <h4 className="outofstockmessage">Out of stock</h4>
+                  )}
+                </div>
+              ))}
+            </div>
+          </main>
+        </div>
+      </div>
     </section>
   );
 };
