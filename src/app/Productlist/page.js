@@ -56,7 +56,7 @@ const Product = () => {
       });
   }, []);
 
-  console.log(products);
+  // console.log(products);
 
   function togglenavbar() {
     setTogglenavbar(!tooglenavbar);
@@ -228,27 +228,7 @@ const Product = () => {
           {/* Mobile */}
           <div className={`${styles.productcontainer} ${styles.mobile}`}>
             <main className={styles.productmain}>
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "10px" }}
-              >
-                <p
-                  style={{
-                    color: "rgba(136, 135, 146, 1)",
-                    fontWeight: "bold",
-                  }}
-                >
-                  HOME
-                </p>
-                <p
-                  style={{
-                    borderLeft: "1px solid  rgba(136, 135, 146, 1)",
-                    fontWeight: "bold",
-                  }}
-                >
-                  SHOP
-                </p>
-              </div>
-              <div className={styles.productdescription}>
+              {/* <div className={styles.productdescription}>
                 <p>DISCOVER OUR PRODUCTS</p>
                 <span>
                   Lorem ipsum dolor sit amet consectetur. Amet est posuere
@@ -258,7 +238,7 @@ const Product = () => {
               </div>
               <div className={styles.productheader}>
                 <div className={styles.producttitle}>
-                  {/* <h3> {products.length} ITEMS</h3> */}
+                
                   <h5
                     styles={{
                       display: "flex",
@@ -271,7 +251,7 @@ const Product = () => {
                     className={tooglenavbar ? "active" : ""}
                     onClick={togglenavbar}
                   >
-                    {/* <Image src={leftarrow} alt="check" /> */}
+                   
                     FILTER{" "}
                   </h5>
                 </div>
@@ -283,7 +263,6 @@ const Product = () => {
                     {selectedOption} <Image src={downarrow} alt="downarrow" />
                   </h5>
 
-                  {/* Render the select dropdown */}
                   {showOptions && (
                     <ul styles={{}} className={styles.dropdownMenuul}>
                       {options.map((option, index) => (
@@ -306,9 +285,8 @@ const Product = () => {
                     </ul>
                   )}
                 </div>
-              </div>
-              {/* {tooglenavbar ? <Sidebar className="sidebar" /> : ""} */}
-              {/* <Sidebar className="sidebar" /> */}
+              </div> */}
+
               <div className={styles.productgrid}>
                 {products.map((product) => (
                   <div

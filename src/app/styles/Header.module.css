@@ -21,10 +21,10 @@
         position: absolute;
         z-index: 999;
         width: 100%;
-        top: 100%;
+
         /* Initially position the menu below the header */
 
-        top: 10;
+
         /* Position it below the header */
         background-color: white;
         /* left: 0; */
@@ -78,6 +78,7 @@
         box-sizing: border-box;
         position: fixed;
         z-index: 1;
+        top: 0;
     }
 
     .headerTopMain {
@@ -273,6 +274,10 @@
         padding: 0;
     }
 
+    .headerBottom li:hover {
+        color: gray;
+    }
+
     .headerBottom li {
         display: inline-block;
         margin: 0 20px;
@@ -390,11 +395,17 @@
         font-size: 20px;
         line-height: 24px;
         font-weight: 700;
+        cursor: pointer;
     }
 
     .headerBottom li:last-child {
         margin-right: 0;
     }
+
+    .headerBottom li:hover {
+        color: gray;
+    }
+
 }
 
 /* Pink color for laptops */
@@ -500,9 +511,14 @@
         font-size: 20px;
         line-height: 24px;
         font-weight: 700;
+        cursor: pointer;
     }
 
     .headerBottom li:last-child {
         margin-right: 0;
+    }
+
+    .headerBottom li:hover {
+        color: gray;
     }
 }

@@ -56,68 +56,275 @@ const Navbar = ({ toggleSidebar }) => {
   const toggleOptions = () => {
     setShowOptions(!showOptions);
   };
-  function togglenavbar() {
-    setTogglenavbar(!tooglenavbar);
-  }
 
   return (
-    <div className={styles.productcontainer}>
-      <div className={styles.productdescription}>
-        <p>DISCOVER OUR PRODUCTS</p>
-        <span>
-          Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
-          scelerisque. Dolor integer scelerisque nibh amet mi ut elementum
-          dolor.
-        </span>
-      </div>
-      <div className={styles.productheader}>
-        <div className={styles.producttitle}>
-          <h3> {products.length} ITEMS</h3>
-          <h3
-            styles={{
-              display: "flex",
-              alignItems: "center",
-              cursor: "pointer",
-              color: "rgba(136, 135, 146, 1)",
-              textDecoration: toggleSidebar ? "underline" : "none",
-            }}
-            className={toggleSidebar ? "active" : ""}
-            onClick={toggleSidebar}
-          >
-            <Image src={leftarrow} alt="check" />
-            HIDE FILTER{" "}
-          </h3>
+    <div>
+      {/* Desktop */}
+      <div className={`${styles.productcontainer} ${styles.desktop}`}>
+        <div className={styles.productdescription}>
+          <p>DISCOVER OUR PRODUCTS</p>
+          <span>
+            Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
+            scelerisque. Dolor integer scelerisque nibh amet mi ut elementum
+            dolor.
+          </span>
         </div>
-        <div
-          className={styles.productdropdown}
-          styles={{ position: "relative" }}
-        >
-          <h3 onClick={toggleOptions} styles={{ cursor: "pointer" }}>
-            {selectedOption} <Image src={downarrow} alt="downarrow" />
-          </h3>
+        <div className={styles.productheader}>
+          <div className={styles.producttitle}>
+            <h3> {products.length} ITEMS</h3>
+            <h3
+              styles={{
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+                color: "rgba(136, 135, 146, 1)",
+                textDecoration: toggleSidebar ? "underline" : "none",
+              }}
+              className={toggleSidebar ? "active" : ""}
+              onClick={toggleSidebar}
+            >
+              <Image src={leftarrow} alt="check" />
+              HIDE FILTER{" "}
+            </h3>
+          </div>
+          <div
+            className={styles.productdropdown}
+            styles={{ position: "relative" }}
+          >
+            <h3 onClick={toggleOptions} styles={{ cursor: "pointer" }}>
+              {selectedOption} <Image src={downarrow} alt="downarrow" />
+            </h3>
 
-          {/* Render the select dropdown */}
-          {showOptions && (
-            <ul styles={{}} className={styles.dropdownMenuul}>
-              {options.map((option, index) => (
-                <li
-                  styles={{
-                    color: option === selectedOption ? "black" : "gray",
-                  }}
-                  className={styles.dropdownMenuli}
-                  key={index}
-                  onClick={() => handleOptionSelect(option)}
-                >
-                  {option === selectedOption ? (
-                    <Image src={Correct} alt="correct" />
-                  ) : (
-                    ""
-                  )}
-                  {option}
-                </li>
-              ))}
-            </ul>
-          )}
+            {/* Render the select dropdown */}
+            {showOptions && (
+              <ul styles={{}} className={styles.dropdownMenuul}>
+                {options.map((option, index) => (
+                  <li
+                    styles={{
+                      color: option === selectedOption ? "black" : "gray",
+                    }}
+                    className={styles.dropdownMenuli}
+                    key={index}
+                    onClick={() => handleOptionSelect(option)}
+                  >
+                    {option === selectedOption ? (
+                      <Image src={Correct} alt="correct" />
+                    ) : (
+                      ""
+                    )}
+                    {option}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      </div>
+      {/* Laptop */}
+      <div className={`${styles.productcontainer} ${styles.laptop}`}>
+        <div className={styles.productdescription}>
+          <p>DISCOVER OUR PRODUCTS</p>
+          <span>
+            Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
+            scelerisque. Dolor integer scelerisque nibh amet mi ut elementum
+            dolor.
+          </span>
+        </div>
+        <div className={styles.productheader}>
+          <div className={styles.producttitle}>
+            <h3> {products.length} ITEMS</h3>
+            <h3
+              styles={{
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+                color: "rgba(136, 135, 146, 1)",
+                textDecoration: toggleSidebar ? "underline" : "none",
+              }}
+              className={toggleSidebar ? "active" : ""}
+              onClick={toggleSidebar}
+            >
+              <Image src={leftarrow} alt="check" />
+              HIDE FILTER{" "}
+            </h3>
+          </div>
+          <div
+            className={styles.productdropdown}
+            styles={{ position: "relative" }}
+          >
+            <h3 onClick={toggleOptions} styles={{ cursor: "pointer" }}>
+              {selectedOption} <Image src={downarrow} alt="downarrow" />
+            </h3>
+
+            {/* Render the select dropdown */}
+            {showOptions && (
+              <ul styles={{}} className={styles.dropdownMenuul}>
+                {options.map((option, index) => (
+                  <li
+                    styles={{
+                      color: option === selectedOption ? "black" : "gray",
+                    }}
+                    className={styles.dropdownMenuli}
+                    key={index}
+                    onClick={() => handleOptionSelect(option)}
+                  >
+                    {option === selectedOption ? (
+                      <Image src={Correct} alt="correct" />
+                    ) : (
+                      ""
+                    )}
+                    {option}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>{" "}
+      </div>
+      {/* Tablet */}
+      <div className={`${styles.productcontainer} ${styles.tablet}`}>
+        <div className={styles.productdescription}>
+          <p>DISCOVER OUR PRODUCTS</p>
+          <span>
+            Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
+            scelerisque. Dolor integer scelerisque nibh amet mi ut elementum
+            dolor.
+          </span>
+        </div>
+        <div className={styles.productheader}>
+          <div className={styles.producttitle}>
+            <h3> {products.length} ITEMS</h3>
+            <h3
+              styles={{
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+                color: "rgba(136, 135, 146, 1)",
+                textDecoration: toggleSidebar ? "underline" : "none",
+              }}
+              className={toggleSidebar ? "active" : ""}
+              onClick={toggleSidebar}
+            >
+              <Image src={leftarrow} alt="check" />
+              HIDE FILTER{" "}
+            </h3>
+          </div>
+          <div
+            className={styles.productdropdown}
+            styles={{ position: "relative" }}
+          >
+            <h3 onClick={toggleOptions} styles={{ cursor: "pointer" }}>
+              {selectedOption} <Image src={downarrow} alt="downarrow" />
+            </h3>
+
+            {/* Render the select dropdown */}
+            {showOptions && (
+              <ul styles={{}} className={styles.dropdownMenuul}>
+                {options.map((option, index) => (
+                  <li
+                    styles={{
+                      color: option === selectedOption ? "black" : "gray",
+                    }}
+                    className={styles.dropdownMenuli}
+                    key={index}
+                    onClick={() => handleOptionSelect(option)}
+                  >
+                    {option === selectedOption ? (
+                      <Image src={Correct} alt="correct" />
+                    ) : (
+                      ""
+                    )}
+                    {option}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>{" "}
+      </div>
+      {/* Mobile */}
+      <div className={`${styles.productcontainer} ${styles.mobile}`}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            color: "black",
+            marginTop: "120px",
+          }}
+        >
+          <p
+            style={{
+              color: "rgba(136, 135, 146, 1)",
+              fontWeight: "bold",
+            }}
+          >
+            HOME
+          </p>
+          <p
+            style={{
+              borderLeft: "1px solid  rgba(136, 135, 146, 1)",
+              fontWeight: "bold",
+            }}
+          >
+            SHOP
+          </p>
+        </div>
+        <div className={styles.productdescription}>
+          <p>DISCOVER OUR PRODUCTS</p>
+          <span>
+            Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
+            scelerisque. Dolor integer scelerisque nibh amet mi ut elementum
+            dolor.
+          </span>
+        </div>
+        <div className={styles.productheader}>
+          <div className={styles.producttitle}>
+            <h5
+              styles={{
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+                color: "rgba(136, 135, 146, 1)",
+
+                textDecoration: toggleSidebar ? "underline" : "none",
+              }}
+              className={toggleSidebar ? "active" : ""}
+              onClick={toggleSidebar}
+            >
+              FILTER{" "}
+            </h5>
+          </div>
+          <div
+            className={styles.productdropdown}
+            styles={{ position: "relative" }}
+          >
+            <h5 onClick={toggleOptions} styles={{ cursor: "pointer" }}>
+              {selectedOption} <Image src={downarrow} alt="downarrow" />
+            </h5>
+
+            {showOptions && (
+              <ul styles={{}} className={styles.dropdownMenuul}>
+                {options.map((option, index) => (
+                  <li
+                    styles={{
+                      color: option === selectedOption ? "black" : "gray",
+                    }}
+                    className={styles.dropdownMenuli}
+                    key={index}
+                    onClick={() => handleOptionSelect(option)}
+                  >
+                    {option === selectedOption ? (
+                      <Image src={Correct} alt="correct" />
+                    ) : (
+                      ""
+                    )}
+                    {option}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
       </div>
     </div>
