@@ -10,12 +10,13 @@ import "./styles/globals.css";
 const page = () => {
   return (
     <div>
-      <Headerpage />
+      <Navbar />
+      {/* <Headerpage /> */}
       <div>
         {/* <Slidebar /> */}
-        <Products />
+        {/* <Products /> */}
       </div>
-      <Demopage />
+      {/* <Demopage /> */}
       {/* <Footerpage /> */}
     </div>
   );

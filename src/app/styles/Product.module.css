@@ -66,9 +66,10 @@
     .productdescription {
         width: 90%;
         text-align: justify;
-
+        top: 10;
         margin: 0 auto;
         margin-bottom: 10px;
+        margin-top: 80px;
     }
 
     .productdescription p {
