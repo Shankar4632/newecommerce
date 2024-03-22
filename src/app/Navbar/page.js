@@ -58,7 +58,9 @@ const Navbar = ({ toggleSidebar }) => {
   };
 
   return (
-    <div>
+    <div
+      style={{ backgroundColor: "white", maxWidth: "1400px", margin: "0 auto" }}
+    >
       {/* Desktop */}
       <div className={`${styles.productcontainer} ${styles.desktop}`}>
         <div className={styles.productdescription}>

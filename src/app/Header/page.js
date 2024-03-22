@@ -22,7 +22,9 @@ const Header = () => {
     console.log("toggleMenu");
   };
   return (
-    <section>
+    <section
+      style={{ backgroundColor: "white", maxWidth: "1400px", margin: "0 auto" }}
+    >
       {/* Mobile */}
       <div className={`${styles.container} ${styles.mobile}`}>
         <header className={styles.headerSection}>

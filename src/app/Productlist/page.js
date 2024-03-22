@@ -66,7 +66,9 @@ const Product = () => {
 
   //return statement
   return (
-    <section style={{ backgroundColor: "white", width: "90%" }}>
+    <section
+      style={{ backgroundColor: "white", maxWidth: "1400px", margin: "0 auto" }}
+    >
       <div>
         {/* Desktop */}
         <div className={`${styles.productcontainer} ${styles.desktop}`}>
