@@ -74,7 +74,7 @@ const Product = () => {
 
   //return statement
   return (
-    <section>
+    <section style={{ backgroundColor: "white", width: "90%" }}>
       {IsLoading ? (
         <div className={styles.loadingcontainer}>
           <div className={styles.contentwrapper}>
@@ -91,73 +91,6 @@ const Product = () => {
           {/* Desktop */}
           <div className={`${styles.productcontainer} ${styles.desktop}`}>
             <main>
-              <div className={styles.productdescription}>
-                <p>DISCOVER OUR PRODUCTS</p>
-                <span>
-                  Lorem ipsum dolor sit amet consectetur. Amet est posuere
-                  rhoncus scelerisque. Dolor integer scelerisque nibh amet mi ut
-                  elementum dolor.
-                </span>
-              </div>
-              <div
-                // style={{ border: "1px solid red" }}
-                className={styles.productheader}
-              >
-                <div className={styles.producttitle}>
-                  <h3> {products.length} ITEMS</h3>
-                  <h3
-                    styles={{
-                      display: "flex",
-                      alignItems: "center",
-                      cursor: "pointer",
-                      color: "rgba(136, 135, 146, 1)",
-                      textDecoration: tooglenavbar ? "underline" : "none",
-                    }}
-                    className={tooglenavbar ? "active" : ""}
-                    onClick={togglenavbar}
-                  >
-                    <Image src={leftarrow} alt="leftarrow" />
-                    HIDE FILTER{" "}
-                  </h3>
-                </div>
-                <div
-                  className={styles.productdropdown}
-                  styles={{ position: "relative" }}
-                >
-                  <h3 onClick={toggleOptions} styles={{ cursor: "pointer" }}>
-                    {selectedOption} <Image src={downarrow} alt="downarrow" />
-                  </h3>
-
-                  {/* Render the select dropdown */}
-                  {showOptions && (
-                    <ul className={styles.dropdownMenu}>
-                      {options.map((option, index) => (
-                        <li
-                          styles={{
-                            cursor: "pointer",
-                            liststyles: "none",
-                            padding: "10px",
-                            borderBottom: "1px solid black",
-                            textAlign: "center",
-                            color: option === selectedOption ? "black" : "gray",
-                          }}
-                          key={index}
-                          onClick={() => handleOptionSelect(option)}
-                        >
-                          {option === selectedOption ? (
-                            <Image src={Correct} alt="check" />
-                          ) : (
-                            ""
-                          )}
-                          {option}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-              {/* {tooglenavbar ? <Sidebar className="sidebar" /> : ""} */}
-              {/* <Sidebar className="sidebar" /> */}
               <div className={styles.productgrid}>
                 {products.map((product) => (
                   <div
@@ -193,78 +126,15 @@ const Product = () => {
           {/* Laptop */}
           <div className={`${styles.productcontainer} ${styles.laptop}`}>
             <main className={styles.productmain}>
-              <div className={styles.productdescription}>
-                <p>DISCOVER OUR PRODUCTS</p>
-                <span>
-                  Lorem ipsum dolor sit amet consectetur. Amet est posuere
-                  rhoncus scelerisque. Dolor integer scelerisque nibh amet mi ut
-                  elementum dolor.
-                </span>
-              </div>
-              <div className={styles.productheader}>
-                <div className={styles.producttitle}>
-                  <h3> {products.length} ITEMS</h3>
-                  <h3
-                    styles={{
-                      display: "flex",
-                      alignItems: "center",
-                      cursor: "pointer",
-                      color: "rgba(136, 135, 146, 1)",
-                      textDecoration: tooglenavbar ? "underline" : "none",
-                    }}
-                    className={tooglenavbar ? "active" : ""}
-                    onClick={togglenavbar}
-                  >
-                    <Image src={leftarrow} alt="check" />
-                    HIDE FILTER{" "}
-                  </h3>
-                </div>
-                <div
-                  className={styles.productdropdown}
-                  styles={{ position: "relative" }}
-                >
-                  <h3 onClick={toggleOptions} styles={{ cursor: "pointer" }}>
-                    {selectedOption} <Image src={downarrow} alt="downarrow" />
-                  </h3>
-
-                  {/* Render the select dropdown */}
-                  {showOptions && (
-                    <ul styles={{}} className={styles.dropdownMenuul}>
-                      {options.map((option, index) => (
-                        <li
-                          styles={{
-                            color: option === selectedOption ? "black" : "gray",
-                          }}
-                          className={styles.dropdownMenuli}
-                          key={index}
-                          onClick={() => handleOptionSelect(option)}
-                        >
-                          {option === selectedOption ? (
-                            <Image src={Correct} alt="correct" />
-                          ) : (
-                            ""
-                          )}
-                          {option}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
               {/* {tooglenavbar ? <Sidebar className="sidebar" /> : ""} */}
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  width: "100%",
                 }}
               >
-                <div
-                  style={{ display: tooglenavbar ? "none" : "block" }}
-                  className={styles.sidebar}
-                >
-                  <Sidebar />
-                </div>
                 <div className={styles.productgrid}>
                   {products.map((product) => (
                     <div
@@ -311,65 +181,6 @@ const Product = () => {
           {/* Tablet */}
           <div className={`${styles.productcontainer} ${styles.tablet}`}>
             <main className={styles.productmain}>
-              <div className={styles.productdescription}>
-                <p>DISCOVER OUR PRODUCTS</p>
-                <span>
-                  Lorem ipsum dolor sit amet consectetur. Amet est posuere
-                  rhoncus scelerisque. Dolor integer scelerisque nibh amet mi ut
-                  elementum dolor.
-                </span>
-              </div>
-              <div className={styles.productheader}>
-                <div className={styles.producttitle}>
-                  {/* <h3> {products.length} ITEMS</h3> */}
-                  <h5
-                    styles={{
-                      display: "flex",
-                      alignItems: "center",
-                      cursor: "pointer",
-                      color: "rgba(136, 135, 146, 1)",
-
-                      textDecoration: tooglenavbar ? "underline" : "none",
-                    }}
-                    className={tooglenavbar ? "active" : ""}
-                    onClick={togglenavbar}
-                  >
-                    {/* <Image src={leftarrow} alt="check" /> */}
-                    FILTER{" "}
-                  </h5>
-                </div>
-                <div
-                  className={styles.productdropdown}
-                  styles={{ position: "relative" }}
-                >
-                  <h5 onClick={toggleOptions} styles={{ cursor: "pointer" }}>
-                    {selectedOption} <Image src={downarrow} alt="downarrow" />
-                  </h5>
-
-                  {/* Render the select dropdown */}
-                  {showOptions && (
-                    <ul styles={{}} className={styles.dropdownMenuul}>
-                      {options.map((option, index) => (
-                        <li
-                          styles={{
-                            color: option === selectedOption ? "black" : "gray",
-                          }}
-                          className={styles.dropdownMenuli}
-                          key={index}
-                          onClick={() => handleOptionSelect(option)}
-                        >
-                          {option === selectedOption ? (
-                            <Image src={Correct} alt="correct" />
-                          ) : (
-                            ""
-                          )}
-                          {option}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
               {/* {tooglenavbar ? <Sidebar className="sidebar" /> : ""} */}
               {/* <Sidebar className="sidebar" /> */}
               <div className={styles.productgrid}>

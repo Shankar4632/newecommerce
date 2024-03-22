@@ -11,7 +11,7 @@ import leftarrow from "../../asserts/arrowleft.png";
 import Correct from "../../asserts/Correct.png";
 
 // Define your component
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
   // Initialize state variables
   const [products, setProducts] = useState([]);
   const [selectedOption, setSelectedOption] = useState("RECOMMENDED");
@@ -61,7 +61,7 @@ const Navbar = () => {
   }
 
   return (
-    <div>
+    <div className={styles.productcontainer}>
       <div className={styles.productdescription}>
         <p>DISCOVER OUR PRODUCTS</p>
         <span>
@@ -79,10 +79,10 @@ const Navbar = () => {
               alignItems: "center",
               cursor: "pointer",
               color: "rgba(136, 135, 146, 1)",
-              textDecoration: tooglenavbar ? "underline" : "none",
+              textDecoration: toggleSidebar ? "underline" : "none",
             }}
-            className={tooglenavbar ? "active" : ""}
-            onClick={togglenavbar}
+            className={toggleSidebar ? "active" : ""}
+            onClick={toggleSidebar}
           >
             <Image src={leftarrow} alt="check" />
             HIDE FILTER{" "}

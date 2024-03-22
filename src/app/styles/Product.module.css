@@ -1,6 +1,6 @@
 .productcontainer {
     background-color: white;
-    width: 90%;
+    width: 100%;
     height: 100%;
     margin-top: 20px;
     display: none;
@@ -155,6 +155,7 @@
         position: relative;
         margin-bottom: 20px;
         width: 100%;
+        margin: 0 auto;
 
 
     }
@@ -671,6 +672,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         height: auto;
+        width: 100%;
         gap: 10px;
         margin-top: 20px;
         position: relative;

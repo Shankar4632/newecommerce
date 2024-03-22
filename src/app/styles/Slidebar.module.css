@@ -1,8 +1,9 @@
 .sidebar {
     width: 350px;
-    height: 1000px;
+    height: 100vh;
     /* Set height to 100% */
     background-color: white;
+    position: absolute;
     left: 0;
     z-index: 100;
     box-shadow: -1px 0px 1px 0px rgba(0, 0, 0, 0.2);

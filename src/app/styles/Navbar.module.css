@@ -1,3 +1,13 @@
+.productcontainer {
+    background-color: white;
+    width: 90%;
+    height: 100%;
+    margin-top: 20px;
+    /* display: none; */
+    position: relative;
+    margin: 0 auto;
+}
+
 .product-dropdown {
     display: flex;
     justify-content: flex-end;
