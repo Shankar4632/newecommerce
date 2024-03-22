@@ -68,7 +68,7 @@ const page = () => {
 
   return (
     <section
-      style={{ backgroundColor: "white", maxWidth: "1400px", margin: "0 auto" }}
+      style={{ backgroundColor: "white", width: "100%", margin: "0 auto" }}
     >
       <div style={{ display: "flex", justifyContent: "center" }}>
         {/* Mobile */}

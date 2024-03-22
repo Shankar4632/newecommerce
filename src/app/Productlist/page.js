@@ -17,7 +17,7 @@ const Product = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [hoveredProductId, setHoveredProductId] = useState(null);
   const [tooglenavbar, setTogglenavbar] = useState("false");
-  // const { IsLoading, setIsLoading } = useState(true);
+  const { isLoading, setIsLoading } = useState(true);
 
   //function calling
   const options = [
@@ -40,11 +40,11 @@ const Product = () => {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
-        // setIsLoading(false);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-        // setIsLoading(false);
+        setIsLoading(false);
       });
   }, []);
 
@@ -73,7 +73,7 @@ const Product = () => {
         {/* Desktop */}
         <div className={`${styles.productcontainer} ${styles.desktop}`}>
           <main>
-            <div className={styles.productgrid}>
+            {/* <div className={styles.productgrid}>
               {products.map((product) => (
                 <div
                   className={styles.productitem}
@@ -102,7 +102,41 @@ const Product = () => {
                   )}
                 </div>
               ))}
-            </div>
+            </div> */}
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : (
+              <div className={styles.productgrid}>
+                {products.map((product) => (
+                  <div
+                    className={styles.productitem}
+                    key={product.id}
+                    onMouseEnter={() => setHoveredProductId(product.id)}
+                    onMouseLeave={() => setHoveredProductId(null)}
+                  >
+                    <Image
+                      src={product.image}
+                      alt="productsImage"
+                      width={200}
+                      height={200}
+                      className={`product-image product-image-${product.id}`}
+                    />
+                    <h4
+                      className={styles.producttitle}
+                      dangerouslySetInnerHTML={{
+                        __html: truncateContent(product.title.slice(0, 20)),
+                      }}
+                    ></h4>
+                    <span className={styles.productcategory}>
+                      ${product.category}
+                    </span>
+                    {hoveredProductId === product.id && (
+                      <h4 className="outofstockmessage">Out of stock</h4>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </main>
         </div>
         {/* Laptop */}

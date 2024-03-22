@@ -527,7 +527,7 @@
     }
 
     .footermain {
-        width: 90%;
+        max-width: 1200px;
         height: auto;
         flex-direction: row;
 
