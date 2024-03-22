@@ -34,14 +34,6 @@ const Product = () => {
   const toggleOptions = () => {
     setShowOptions(!showOptions);
   };
-  // useEffect(() => {
-  //   fetch("https://fakestoreapi.com/products")
-  //     .then((res) => res.json())
-  //     .then((data) => setProducts(data)
-
-  //     );
-  //   setIsLoading(false);
-  // }, []);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -228,65 +220,6 @@ const Product = () => {
           {/* Mobile */}
           <div className={`${styles.productcontainer} ${styles.mobile}`}>
             <main className={styles.productmain}>
-              {/* <div className={styles.productdescription}>
-                <p>DISCOVER OUR PRODUCTS</p>
-                <span>
-                  Lorem ipsum dolor sit amet consectetur. Amet est posuere
-                  rhoncus scelerisque. Dolor integer scelerisque nibh amet mi ut
-                  elementum dolor.
-                </span>
-              </div>
-              <div className={styles.productheader}>
-                <div className={styles.producttitle}>
-                
-                  <h5
-                    styles={{
-                      display: "flex",
-                      alignItems: "center",
-                      cursor: "pointer",
-                      color: "rgba(136, 135, 146, 1)",
-
-                      textDecoration: tooglenavbar ? "underline" : "none",
-                    }}
-                    className={tooglenavbar ? "active" : ""}
-                    onClick={togglenavbar}
-                  >
-                   
-                    FILTER{" "}
-                  </h5>
-                </div>
-                <div
-                  className={styles.productdropdown}
-                  styles={{ position: "relative" }}
-                >
-                  <h5 onClick={toggleOptions} styles={{ cursor: "pointer" }}>
-                    {selectedOption} <Image src={downarrow} alt="downarrow" />
-                  </h5>
-
-                  {showOptions && (
-                    <ul styles={{}} className={styles.dropdownMenuul}>
-                      {options.map((option, index) => (
-                        <li
-                          styles={{
-                            color: option === selectedOption ? "black" : "gray",
-                          }}
-                          className={styles.dropdownMenuli}
-                          key={index}
-                          onClick={() => handleOptionSelect(option)}
-                        >
-                          {option === selectedOption ? (
-                            <Image src={Correct} alt="correct" />
-                          ) : (
-                            ""
-                          )}
-                          {option}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div> */}
-
               <div className={styles.productgrid}>
                 {products.map((product) => (
                   <div
