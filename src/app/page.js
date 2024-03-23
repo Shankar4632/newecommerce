@@ -28,7 +28,12 @@ const page = () => {
       </Head>
       <Headerpage />
       <Navbar toggleSidebar={toggleSidebar} />
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+        }}
+      >
         {isSidebarOpen && <Slidebar />}
         <Products />
       </div>
