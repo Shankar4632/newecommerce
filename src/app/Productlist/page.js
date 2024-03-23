@@ -73,36 +73,6 @@ const Product = () => {
         {/* Desktop */}
         <div className={`${styles.productcontainer} ${styles.desktop}`}>
           <main>
-            {/* <div className={styles.productgrid}>
-              {products.map((product) => (
-                <div
-                  className={styles.productitem}
-                  key={product.id}
-                  onMouseEnter={() => setHoveredProductId(product.id)}
-                  onMouseLeave={() => setHoveredProductId(null)}
-                >
-                  <Image
-                    src={product.image}
-                    alt="productsImage"
-                    width={200}
-                    height={200}
-                    className={`product-image product-image-${product.id}`}
-                  />
-                  <h4
-                    className={styles.producttitle}
-                    dangerouslySetInnerHTML={{
-                      __html: truncateContent(product.title.slice(0, 20)),
-                    }}
-                  ></h4>
-                  <span className={styles.productcategory}>
-                    ${product.category}
-                  </span>
-                  {hoveredProductId === product.id && (
-                    <h4 className="outofstockmessage">Out of stock</h4>
-                  )}
-                </div>
-              ))}
-            </div> */}
             {isLoading ? (
               <div>Loading...</div>
             ) : (
@@ -131,7 +101,22 @@ const Product = () => {
                       ${product.category}
                     </span>
                     {hoveredProductId === product.id && (
-                      <h4 className="outofstockmessage">Out of stock</h4>
+                      <h4
+                        style={{
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          transform: " translate(-50%, -50%)",
+                          backgroundColor: "white",
+                          width: "100%",
+                          height: "10%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        Out of stock
+                      </h4>
                     )}
                   </div>
                 ))}
@@ -159,10 +144,12 @@ const Product = () => {
                     onMouseEnter={() => setHoveredProductId(product.id)}
                     onMouseLeave={() => setHoveredProductId(null)}
                   >
-                    <img
+                    <Image
                       src={product.image}
                       alt="productsImage"
                       className={`product-image product-image-${product.id}`}
+                      width={200}
+                      height={200}
                     />
                     <h4
                       className={styles.producttitle}
@@ -186,7 +173,22 @@ const Product = () => {
                       />
                     </span>
                     {hoveredProductId === product.id && (
-                      <h4 className="outofstockmessage">Out of stock</h4>
+                      <h4
+                        style={{
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          transform: " translate(-50%, -50%)",
+                          backgroundColor: "white",
+                          width: "100%",
+                          height: "10%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        Out of stock
+                      </h4>
                     )}
                   </div>
                 ))}
@@ -207,10 +209,12 @@ const Product = () => {
                   onMouseEnter={() => setHoveredProductId(product.id)}
                   onMouseLeave={() => setHoveredProductId(null)}
                 >
-                  <img
+                  <Image
                     src={product.image}
                     alt="productsImage"
                     className={`product-image product-image-${product.id}`}
+                    width={200}
+                    height={200}
                   />
                   <h4
                     className={styles.producttitle}
@@ -234,7 +238,22 @@ const Product = () => {
                     />
                   </span>
                   {hoveredProductId === product.id && (
-                    <h4 className="outofstockmessage">Out of stock</h4>
+                    <h4
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: " translate(-50%, -50%)",
+                        backgroundColor: "white",
+                        width: "100%",
+                        height: "10%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      Out of stock
+                    </h4>
                   )}
                 </div>
               ))}
@@ -252,10 +271,12 @@ const Product = () => {
                   onMouseEnter={() => setHoveredProductId(product.id)}
                   onMouseLeave={() => setHoveredProductId(null)}
                 >
-                  <img
+                  <Image
                     src={product.image}
                     alt="productsImage"
                     className={`product-image product-image-${product.id}`}
+                    width={200}
+                    height={200}
                   />
                   <h4
                     className={styles.producttitle}
@@ -279,7 +300,22 @@ const Product = () => {
                     />
                   </span>
                   {hoveredProductId === product.id && (
-                    <h4 className="outofstockmessage">Out of stock</h4>
+                    <h4
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: " translate(-50%, -50%)",
+                        backgroundColor: "white",
+                        width: "100%",
+                        height: "10%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      Out of stock
+                    </h4>
                   )}
                 </div>
               ))}

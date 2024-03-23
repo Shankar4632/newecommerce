@@ -471,7 +471,7 @@
         display: flex;
         width: 60%;
         align-items: center;
-        gap: 200px;
+        gap: 10px;
 
     }
 
@@ -549,6 +549,7 @@
 
     .footercolumnsecond {
         flex: 0 0 40%;
+
     }
 
     .footerinput {
@@ -576,6 +577,15 @@
         flex: 0 0 100%;
         color: #ffffff;
         display: flex;
+    }
+
+    .footercolumnfirst2 {
+        flex: 0 0 60%;
+        /* background-color: aqua; */
+    }
+
+    .footercolumnsecond2 {
+        flex: 0 0 40%;
     }
 
     .footercolumnfirst h4 {
@@ -628,7 +638,7 @@
         display: flex;
         width: 60%;
         align-items: center;
-        gap: 200px;
+        gap: 150px;
 
     }
 
