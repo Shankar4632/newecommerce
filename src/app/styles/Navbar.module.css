@@ -172,7 +172,7 @@
     .dropdownMenuul {
         position: absolute;
         top: 10;
-        margin-top: 50px;
+        margin-top: 30px;
         background: white;
         z-index: 1;
         list-style: none;
@@ -423,8 +423,8 @@
 
     .dropdownMenuul {
         position: absolute;
-        top: 10;
-        margin-top: 50px;
+
+        margin-top: 30px;
         background: white;
         z-index: 1;
         list-style: none;

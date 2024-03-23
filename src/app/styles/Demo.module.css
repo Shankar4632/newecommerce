@@ -17,12 +17,13 @@
     }
 
     .footermain {
-        width: 90%;
+        width: 100%;
         height: auto;
         flex-direction: row;
 
         margin: 0 auto;
     }
+
 
     .footercolumn {
         flex: 0 0 100%;
@@ -527,10 +528,16 @@
     }
 
     .footermain {
-        max-width: 1200px;
+        width: 100%;
         height: auto;
         flex-direction: row;
 
+        margin: 0 auto;
+    }
+
+    .footersection {
+        max-width: 1200px;
+        width: 90%;
         margin: 0 auto;
     }
 
