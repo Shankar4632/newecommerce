@@ -17,7 +17,7 @@ const Product = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [hoveredProductId, setHoveredProductId] = useState(null);
   const [tooglenavbar, setTogglenavbar] = useState("false");
-  const { isLoading, setIsLoading } = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   //function calling
   const options = [
@@ -31,21 +31,24 @@ const Product = () => {
     setSelectedOption(option);
     setShowOptions(false);
   };
-  const toggleOptions = () => {
-    setShowOptions(!showOptions);
-  };
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        if (!response.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        const data = await response.json();
         setProducts(data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
+        setIsLoading(false); // Set loading to false after data is fetched
+      } catch (error) {
         console.error("Error fetching data:", error);
-        setIsLoading(false);
-      });
+        setIsLoading(false); // Set loading to false in case of error
+      }
+    };
+
+    fetchProducts();
   }, []);
 
   // console.log(products);
@@ -63,6 +66,19 @@ const Product = () => {
     const truncatedContent = words.join(" ") + "...";
     return truncatedContent;
   }
+  if (isLoading) {
+    return (
+      <div className={styles.loadingcontainer}>
+        <div className={styles.loadinganimation}>
+          <div className={styles.loadingbar}></div>
+          <div className={styles.loadingbar}></div>
+          <div className={styles.loadingbar}></div>
+          <div className={styles.loadingbar}></div>
+          <div className={styles.loadingbar}></div>
+        </div>
+      </div>
+    );
+  }
 
   //return statement
   return (
@@ -73,55 +89,51 @@ const Product = () => {
         {/* Desktop */}
         <div className={`${styles.productcontainer} ${styles.desktop}`}>
           <main>
-            {isLoading ? (
-              <div>Loading...</div>
-            ) : (
-              <div className={styles.productgrid}>
-                {products.map((product) => (
-                  <div
-                    className={styles.productitem}
-                    key={product.id}
-                    onMouseEnter={() => setHoveredProductId(product.id)}
-                    onMouseLeave={() => setHoveredProductId(null)}
-                  >
-                    <Image
-                      src={product.image}
-                      alt="productsImage"
-                      width={200}
-                      height={200}
-                      className={`product-image product-image-${product.id}`}
-                    />
+            <div className={styles.productgrid}>
+              {products.map((product) => (
+                <div
+                  className={styles.productitem}
+                  key={product.id}
+                  onMouseEnter={() => setHoveredProductId(product.id)}
+                  onMouseLeave={() => setHoveredProductId(null)}
+                >
+                  <Image
+                    src={product.image}
+                    alt="productsImage"
+                    width={200}
+                    height={200}
+                    className={`product-image product-image-${product.id}`}
+                  />
+                  <h4
+                    className={styles.producttitle}
+                    dangerouslySetInnerHTML={{
+                      __html: truncateContent(product.title.slice(0, 20)),
+                    }}
+                  ></h4>
+                  <span className={styles.productcategory}>
+                    ${product.category}
+                  </span>
+                  {hoveredProductId === product.id && (
                     <h4
-                      className={styles.producttitle}
-                      dangerouslySetInnerHTML={{
-                        __html: truncateContent(product.title.slice(0, 20)),
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: " translate(-50%, -50%)",
+                        backgroundColor: "white",
+                        width: "100%",
+                        height: "10%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
                       }}
-                    ></h4>
-                    <span className={styles.productcategory}>
-                      ${product.category}
-                    </span>
-                    {hoveredProductId === product.id && (
-                      <h4
-                        style={{
-                          position: "absolute",
-                          top: "50%",
-                          left: "50%",
-                          transform: " translate(-50%, -50%)",
-                          backgroundColor: "white",
-                          width: "100%",
-                          height: "10%",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
-                      >
-                        Out of stock
-                      </h4>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
+                    >
+                      Out of stock
+                    </h4>
+                  )}
+                </div>
+              ))}
+            </div>
           </main>
         </div>
         {/* Laptop */}
@@ -150,6 +162,7 @@ const Product = () => {
                       className={`product-image product-image-${product.id}`}
                       width={200}
                       height={200}
+                      priority={false}
                     />
                     <h4
                       className={styles.producttitle}

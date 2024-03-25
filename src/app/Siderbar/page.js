@@ -18,7 +18,7 @@ const Sidebar = () => {
   const renderList = (section) => {
     return toggledowns[section] ? (
       <ul className="toggledown">
-        <li>
+        <li style={{ padding: "10px" }}>
           <span
             style={{
               cursor: "pointer",

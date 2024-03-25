@@ -1,6 +1,6 @@
 .sidebar {
     width: 350px;
-    height: 100vh;
+    height: 100%;
     /* Set height to 100% */
     background-color: white;
     position: absolute;
@@ -8,10 +8,22 @@
     z-index: 100;
     box-shadow: -1px 0px 1px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+
+
 
 }
 
-.sidebarcolumn {}
+.sidebarmain {
+    flex: 1;
+    /* Sidebar main content fills remaining space */
+    background-color: white;
+    padding: 10px;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+
+}
 
 .sidebarcolumn ul {
     list-style-type: none;
@@ -35,9 +47,9 @@
     /* background-color: aquamarine; */
     margin-top: 10px;
     font-size: 12px;
-    padding: 0px;
+    padding: 10px;
 }
 
 .toggledown li {
-    padding: 10px;
+    padding: 20px;
 }
