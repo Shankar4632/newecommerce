@@ -10,6 +10,7 @@ import heart from "../../asserts/Vector.png";
 import Correct from "../../asserts/Correct.png";
 
 import styles from "../styles/Product.module.css";
+import Schema from "../Schema/page";
 const Product = () => {
   //hooks or state
   const [products, setProducts] = useState([]);
@@ -86,6 +87,7 @@ const Product = () => {
       style={{ backgroundColor: "white", maxWidth: "1400px", margin: "0 auto" }}
     >
       <div>
+        <Schema />
         {/* Desktop */}
         <div className={`${styles.productcontainer} ${styles.desktop}`}>
           <main>
